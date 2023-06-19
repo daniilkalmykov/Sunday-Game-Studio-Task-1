@@ -4,6 +4,7 @@ namespace Enums
     {
         MainMenu,
         Loading,
-        Gallery
+        Gallery,
+        View
     }
 }
