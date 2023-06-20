@@ -7,13 +7,13 @@ using UnityEngine.UI;
 namespace UI
 {
     [RequireComponent(typeof(Button))]
-    public sealed class ChangeSceneButton : MonoBehaviour
+    public class ChangeSceneButton : MonoBehaviour
     {
         [SerializeField] private SceneName _sceneName;
         
         private Button _button;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _button = GetComponent<Button>();
         }
@@ -28,7 +28,7 @@ namespace UI
             _button.onClick.RemoveListener(OnClick);
         }
 
-        private void OnClick()
+        protected virtual void OnClick()
         {
             SceneLoader.TrySetSceneName(_sceneName);
             SceneManager.LoadScene(SceneName.Loading.ToString());

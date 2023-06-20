@@ -6,11 +6,11 @@ namespace Blinders
 {
     public sealed class GalleryImageBlinder : MonoBehaviour
     {
-        private IGalleryImage _galleryImage;
-        
+        public IGalleryImage Image { get; private set; }
+
         public void Init(int id)
         {
-            _galleryImage = new GalleryImage(id);
+            Image = new GalleryImage(id);
         }
     }
 }

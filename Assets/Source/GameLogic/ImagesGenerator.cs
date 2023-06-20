@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using Blinders;
 using UI;
 using UnityEngine;
@@ -11,7 +10,6 @@ namespace GameLogic
         [SerializeField] private GalleryImageBlinder _galleryImageBlinder;
         [SerializeField] private Transform _container;
         [SerializeField] private int _count;
-        [SerializeField] private SpriteSetter _spriteSetter;
 
         private void Start()
         {
@@ -22,9 +20,9 @@ namespace GameLogic
                 if (image.TryGetComponent(out GalleryImageView galleryImageView) == false)
                     throw new ArgumentNullException();
                 
-                image.Init(i);
+                image.Init(i + 1);
 
-                StartCoroutine(_spriteSetter.LoadImage(galleryImageView, i + 1));
+                StartCoroutine(SpriteSetter.LoadImage(galleryImageView, i + 1));
             }
         }
     }
