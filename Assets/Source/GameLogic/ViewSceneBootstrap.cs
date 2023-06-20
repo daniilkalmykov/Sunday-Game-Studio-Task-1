@@ -11,7 +11,6 @@ namespace GameLogic
 
         private void Start()
         {
-            print(_imageId);
             StartCoroutine(SpriteSetter.LoadImage(_imageView, _imageId));
         }
 

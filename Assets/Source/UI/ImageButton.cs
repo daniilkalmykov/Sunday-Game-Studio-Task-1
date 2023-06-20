@@ -18,7 +18,6 @@ namespace UI
         protected override void OnClick()
         {
             ViewSceneBootstrap.TrySetId(_galleryImageBlinder.Image.Id);
-            print(_galleryImageBlinder.Image.Id);
             
             base.OnClick();
         }
